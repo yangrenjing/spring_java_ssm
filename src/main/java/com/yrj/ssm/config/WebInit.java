@@ -20,6 +20,7 @@ public class WebInit implements WebApplicationInitializer {
         //首先来加载 SpringMVC 的配置文件
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
         ctx.register(SpringMVCConfig.class);
+
         // 添加 DispatcherServlet
         ServletRegistration.Dynamic springmvc = servletContext.addServlet("springmvc", new DispatcherServlet(ctx));
         // 给 DispatcherServlet 添加路径映射
